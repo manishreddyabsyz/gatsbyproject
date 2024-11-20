@@ -32,17 +32,9 @@
     margin: 0;
   }
   
-  .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-  }
+
   
-  .App{
-  }
+
 
   .btn{
     width:100px;
@@ -57,12 +49,4 @@
 
   .btn:hover{
     background-color:#e9cba7;
-  }
-
-  .about-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
   }
