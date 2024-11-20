@@ -1,13 +1,12 @@
-// src/pages/details.tsx
 import React from 'react';
 import { graphql } from 'gatsby';
 
-const RecipeDetails = ({ data }) => {
+const RecipeDetails = ({ data }:any) => {
   const recipe = data?.contentfulRecepies;
   console.log(recipe,"recipe")
   const rawContent = recipe?.description.raw ? JSON.parse(recipe.description.raw) : null;
 
-  const renderNode = (node) => {
+  const renderNode = (node:any) => {
     switch (node.nodeType) {
       case "document":
         return <div>{node.content.map(renderNode)}</div>;
@@ -19,7 +18,7 @@ const RecipeDetails = ({ data }) => {
         return <p>{node.content.map(renderNode)}</p>;
 
       case "text":
-        const isBold = node.marks?.some(mark => mark.type === "bold");
+        const isBold = node.marks?.some((mark:any) => mark.type === "bold");
         return isBold ? <strong>{node.value}</strong> : node.value;
 
       case "unordered-list":
